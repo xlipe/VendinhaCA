@@ -1,141 +1,33 @@
+/* --- CONFIGURAÇÕES GERAIS --- */
 * {
-  font-family: Helvetica;
+  font-family: Helvetica, Arial, sans-serif;
+  box-sizing: border-box;
 }
 
-body{
+body {
   margin: 0;
   padding: 0;
-}
-
-#pagina_entrada{
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
-  height: 100vh;  
+  background-color: #f4f4f4;
+  /* Fundo leve para destacar a tabela */
 }
 
-#titulo{
-  
-  /*propriedades das fontes */
-  text-align: center;
-  letter-spacing: -3px;
-  line-height: 28px;
-  font-weight: 800;
-  
-  margin-bottom: 50px;
-  
-  /*propriedades do gradiente*/
-  
-  background-image: linear-gradient(to right, #5384ed, #f246ed);
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  -webkit-text-fill-color: transparent;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  background: white;
-  box-align: center;
-}
-
-th, td {
-  border: 1px solid #ddd;
-  padding: 12px;
-  text-align: left;
-}
-
-a{
-  text-decoration: none;
-  font-weight: bold;
-  font-family: Helvetica;
-}
-
-#button1{
-  color:white;
-  border: none;
-  border-radius: 15px;
-  text-align: center;
-  padding: 12px 24px;
-  cursor: pointer;
-  transition-duration: 1s;
-  background-image: linear-gradient(to right, #008000, #00B800);
-}
-
-#button1:active{
-  background-image: linear-gradient(to right, #00B800, #00E800);
-  
-}
-
-.config_button_image{
-  filter: contrast(50%);
-
-  position:absolute;
-  width: 25px;
-  bottom:15px;
-  right:15px;
-}
-
-.menu-principal {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
-
-.menu-principal li {
-  display: inline;
-}
-
-.menu-principal a {
-  text-decoration: none;
-  padding: 8px 12px;
-  border-radius: 4px;
-  color: #333;
-}
-
-header{
+/* --- CABEÇALHO --- */
+header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  height: 100%;
+  height: 120px;
+  background-image: linear-gradient(to bottom, #BDBDBD, #FFFFFF);
   border-bottom-right-radius: 20px;
   border-bottom-left-radius: 20px;
-
-  /*background-color: #e6e6e6;*/
-  background-image: linear-gradient(to bottom, #BDBDBD, #FFFFFF);
-}
-
-.cabecalho {
-  display: flex;
-  align-items: center;        /* alinha tudo verticalmente no centro */
-  justify-content: space-between; /* logo+titulo de um lado e .spacer do outro */
-  padding: 10px 20px;         /* espaço interno do cabeçalho */
-}
-
-.logo-titulo {
-  display: flex;
-  align-items: center;        /* logo e título na mesma linha, alinhados verticalmente */
-  gap: 15px;                  /* espaço entre logo e título */
-}
-th {
-  background: linear-gradient(to bottom, #5384ed, #3a5bc9);
-  color: #ffffff;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  padding: 12px 16px;
-  border-right: 1px solid #ffffff30;
+  padding: 0 20px;
 }
 
 .icone_container img {
   width: 80px;
-  /* tire o margin-left se quiser deixar centralizado junto com o título */
 }
 
 .texto_cabecalho_container {
@@ -143,80 +35,639 @@ th {
 }
 
 .texto_cabecalho_container h1 {
-  margin: 0;                 /* evita espaçamento extra em cima/abaixo */
+  margin: 0;
   letter-spacing: -2px;
   font-weight: 800;
   font-size: 42px;
-
   background-image: linear-gradient(to right, #5384ed, #f246ed);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
   -webkit-text-fill-color: transparent;
 }
-.spacer{
-  width: 80px;
-  margin-right: 10px;
+
+.texto_cabecalho_container h2 {
+  margin: -5px 0 0 0;
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 400;
+  color: #f246ed;
+  opacity: 0.8;
 }
 
-.produtos-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
-  max-width: 800px;
+.titulos_tabelas {
+  color: #4a4a4a;
+  /* Um cinza escuro profissional */
+  font-size: 1.5rem;
+  /* Tamanho de destaque */
+  margin: 20px 0px 10px 30px;
+  /* Espaço em cima, embaixo e um tiquinho na esquerda */
+  padding-left: 10px;
+  border-left: 5px solid #5384ed;
+  /* Uma bordinha azul combinando com o menu */
+  font-family: sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  /* Deixa em caixa alta para parecer um dashboard */
+}
+
+.espacador-tabela {
+  height: 30px;
+  /* Garante que o menu não sufoque o título */
+}
+
+.spacer {
+  width: 80px;
+}
+
+
+#menu-horizontal {
+  background-image: linear-gradient(to right, #BDBDBD, #FFFFFF);
+  /* Degradê cinza igual ao header */
+  border-bottom: 2px solid #f246ed;
+  /* Linha rosa fina */
+  padding: 0;
+  width: 100%;
+}
+
+#menu-horizontal table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+#menu-horizontal th {
+  padding: 0;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  /* Divisória clarinha */
+}
+
+#menu-horizontal th:last-child {
+  border-right: none;
+}
+
+/* Estilo dos Links e do Botão "Inserir" (Texto Escuro) */
+#menu-horizontal a,
+#menu-horizontal label {
+  display: block;
+  padding: 12px 0;
+  color: #333;
+  /* Texto escuro como na imagem */
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  text-align: center;
+  transition: 0.3s;
+}
+
+#menu-horizontal a:hover,
+#menu-horizontal label:hover {
+  color: #5384ed;
+  /* Muda para azul ao passar o mouse */
+  background-color: rgba(255, 255, 255, 0.5);
+  /* Fundo branco sutil no hover */
+}
+
+/* Esconde a nova área por padrão */
+.area-novo-produto {
+  display: none;
+}
+
+/* Mostra apenas quando o SEGUNDO interruptor for acionado */
+#toggle-novo-produto:checked~.area-novo-produto {
+  display: block;
+}
+
+/* Opcional: Esconde uma caixa se a outra for aberta para não encavalar */
+#toggle-novo-produto:checked~.conteudo-expansivel {
+  display: none;
+}
+
+#toggle-cadastro:checked~.area-novo-produto {
+  display: none;
+}
+
+
+/* --- ESTILO DAS CAIXAS DE INPUT (O que faltava) --- */
+.container-input {
+  width: 95%;
   margin: 20px auto;
   padding: 20px;
-}
-.produto {
-  border: 1px solid #ddd;
-  padding: 15px;
-  text-align: center;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
   border-radius: 8px;
-  background: #f9f9f9;
-      }
-.produto img {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-  border-radius: 50%;
-      }
-.preco { font-size: 1.5em; font-weight: bold; color: #28a745; }
-.comprar-btn {
-  background: #007bff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  display: none;
+  /* Escondido por padrão */
+}
+
+.container-input h3 {
+  margin-top: 0;
+  color: #5384ed;
+  font-size: 18px;
+  border-bottom: 2px solid #f246ed;
+  display: inline-block;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+}
+
+.grid-inputs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+}
+
+.campo label {
+  font-size: 12px;
+  font-weight: bold;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.campo input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+}
+
+.campo input:focus {
+  border-color: #5384ed;
+}
+
+.acoes {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+/* --- LÓGICA DE EXIBIÇÃO --- */
+//* 1. Esconde TODAS as seções por padrão */
+.area-estoque,
+.area-novo-produto,
+.area-editar,
+.area-perda {
+  display: none !important;
+}
+
+/* 2. Mostra APENAS a seção que corresponde ao rádio marcado */
+#toggle-cadastro:checked~.area-estoque {
+  display: block !important;
+}
+
+#toggle-novo-produto:checked~.area-novo-produto {
+  display: block !important;
+}
+
+#toggle-editar:checked~.area-editar {
+  display: block !important;
+}
+
+#toggle-perda:checked~.area-perda {
+  display: block !important;
+}
+
+/* 3. Quando o rádio 'fechar-tudo' estiver marcado (ou nenhum), nada aparece */
+
+/* --- TABELA DE DADOS --- */
+.espacador-tabela {
+  height: 30px;
+}
+
+.tabela-container {
+  width: 95%;
+  margin: 0 auto 40px auto;
+  overflow-x: auto;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background: white;
+}
+
+.tabela-container table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 1100px;
+}
+
+.tabela-container th {
+  background-color: #5384ed;
+  /* Azul igual ao menu */
   color: white;
-  padding: 10px 20px;
+  padding: 15px;
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+.tabela-container td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+  text-align: center;
+  font-size: 14px;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+  background-color: #f1f5ff;
+}
+
+.lucro {
+  color: #28a745;
+  font-weight: bold;
+}
+
+
+
+
+/* Esconde a área de perda por padrão */
+.area-perda {
+  display: none;
+}
+
+/* Mostra apenas quando o botão Perda for clicado */
+#toggle-perda:checked~.area-perda {
+  display: block;
+}
+
+/* LÓGICA DE EXCLUSIVIDADE: Se o PERDA abrir, fecha todos os outros */
+#toggle-perda:checked~.area-estoque,
+#toggle-perda:checked~.area-novo-produto,
+#toggle-perda:checked~.area-editar {
+  display: none;
+}
+
+/* Garante que o PERDA feche se clicar nos outros */
+#toggle-cadastro:checked~.area-perda {
+  display: none;
+}
+
+#toggle-novo-produto:checked~.area-perda {
+  display: none;
+}
+
+#toggle-editar:checked~.area-perda {
+  display: none;
+}
+
+
+/* Container que coloca os itens lado a lado */
+.container-estoque-lista {
+  display: flex;
+  gap: 30px;
+  width: 95%;
+  margin: 0 auto 50px auto;
+  align-items: flex-start;
+  /* Alinha pelo topo */
+}
+
+/* Define que cada coluna ocupa metade da tela */
+.coluna-estoque,
+.coluna-lista {
+  flex: 1;
+}
+
+/* Ajuste para a tabela menor não ocupar 1100px (removendo o min-width anterior) */
+.tabela-container-pequena {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.tabela-container-pequena table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Estilo do Card da Lista de Compras */
+.card-lista {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-top: 4px solid #f246ed;
+  /* Linha rosa para combinar */
+}
+
+.card-lista ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.card-lista li {
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+  color: #444;
+  font-size: 14px;
+}
+
+.card-lista li:last-child {
+  border-bottom: none;
+}
+
+.card-lista li strong {
+  color: #f246ed;
+  /* Destaque na quantidade */
+}
+
+/* Responsividade: Se a tela for pequena, um fica debaixo do outro */
+@media (max-width: 800px) {
+  .container-estoque-lista {
+    flex-direction: column;
+  }
+}
+
+/* --- CONFIGURAÇÕES GERAIS --- */
+* {
+  font-family: Helvetica, Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: #f4f4f4;
+}
+
+/* --- CABEÇALHO --- */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 120px;
+  background-image: linear-gradient(to bottom, #BDBDBD, #FFFFFF);
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  padding: 0 20px;
+}
+
+.icone_container img {
+  width: 80px;
+}
+
+.texto_cabecalho_container {
+  text-align: center;
+}
+
+.texto_cabecalho_container h1 {
+  margin: 0;
+  letter-spacing: -2px;
+  font-weight: 800;
+  font-size: 42px;
+  background-image: linear-gradient(to right, #5384ed, #f246ed);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.texto_cabecalho_container h2 {
+  margin: -5px 0 0 0;
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 400;
+  color: #f246ed;
+  opacity: 0.8;
+}
+
+.titulos_tabelas {
+  color: #4a4a4a;
+  font-size: 1.5rem;
+  margin: 20px 0px 10px 30px;
+  padding-left: 10px;
+  border-left: 5px solid #5384ed;
+  font-family: sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.espacador-tabela {
+  height: 30px;
+}
+
+.spacer {
+  width: 80px;
+}
+
+#menu-horizontal {
+  background-image: linear-gradient(to right, #BDBDBD, #FFFFFF);
+  border-bottom: 2px solid #f246ed;
+  padding: 0;
+  width: 100%;
+}
+
+#menu-horizontal table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+#menu-horizontal th {
+  padding: 0;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+#menu-horizontal th:last-child {
+  border-right: none;
+}
+
+#menu-horizontal a,
+#menu-horizontal label {
+  display: block;
+  padding: 12px 0;
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  text-align: center;
+  transition: 0.3s;
+}
+
+#menu-horizontal a:hover,
+#menu-horizontal label:hover {
+  color: #5384ed;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* --- TABELA DE DADOS --- */
+.tabela-container {
+  width: 95%;
+  margin: 0 auto 40px auto;
+  overflow-x: auto;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background: white;
+}
+
+.tabela-container table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 1100px;
+}
+
+.tabela-container th {
+  background-color: #5384ed;
+  color: white;
+  padding: 15px;
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+.tabela-container td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+  text-align: center;
+  font-size: 14px;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+  background-color: #f1f5ff;
+}
+
+.lucro {
+  color: #28a745;
+  font-weight: bold;
+}
+
+/* --- TABELA REDUZIDA --- */
+.tabela-container.tabela-reduzida {
+  max-width: 600px;
+  /* Ajuste para a largura desejada */
+  margin: 0 auto 40px auto;
+}
+
+.tabela-container.tabela-reduzida table {
+  min-width: auto;
+}
+
+/* --- AJUSTE MENU --- */
+#container-geral input+label {
+  flex-grow: 1;
+}
+
+/* Container que alinha Tabela e Lista */
+.container-flex-estoque {
+  display: flex;
+  gap: 20px;
+  width: 95%;
+  margin: 0 auto 50px auto;
+  align-items: flex-start;
+}
+
+.secao-estoque {
+  flex: 2;
+}
+
+/* Tabela um pouco mais larga */
+.secao-lista {
+  flex: 1;
+}
+
+/* Lista um pouco mais estreita */
+
+/* Estilo da Tabela Estreita com Cabeçalho Azul */
+.tabela-container-reduzida {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.tabela-container-reduzida table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabela-container-reduzida th {
+  background-color: #5384ed;
+  /* Azul do cabeçalho */
+  color: white;
+  padding: 12px;
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+.tabela-container-reduzida td {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  text-align: center;
+  font-size: 13px;
+}
+
+/* Estilo da Lista de Compras (Card Branco) */
+.card-lista {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-top: 4px solid #f246ed;
+  /* Linha rosa no topo */
+}
+
+.card-lista ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.card-lista li {
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+  color: #333;
+}
+
+.qtd-rosa {
+  color: #f246ed;
+  font-weight: bold;
+}
+
+
+
+
+
+
+
+
+/* --- BOTÕES DA ÁREA DE INPUT --- */
+.btn-salvar {
+  background: #5384ed;
+  color: white;
   border: none;
+  padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 1em;
-  width: 100%;
-  margin-top: 10px;
+  font-weight: bold;
 }
-.comprar-btn:hover { background: #0056b3; }
 
-/* Popup */
-#popup {
-  display: none;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: white;
-  padding: 30px;
-  border: 2px solid #28a745;
-  border-radius: 10px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-  z-index: 1000;
-  text-align: center;
-  max-width: 300px;
-}
-#overlay {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.5);
-  z-index: 999;
+.btn-limpar {
+  background: #f8f9fa;
+  color: #666;
+  border: 1px solid #ccc;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
 }
