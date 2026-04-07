@@ -211,7 +211,7 @@ header {
 }
 
 /* --- LÓGICA DE EXIBIÇÃO --- */
-//* 1. Esconde TODAS as seções por padrão */
+/* 1. Esconde TODAS as seções por padrão */
 .area-estoque,
 .area-novo-produto,
 .area-editar,
