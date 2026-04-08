@@ -1,26 +1,25 @@
-<link rel="stylesheet" href="styles.css" type="text/css">
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administração - Vendinha do Calove</title>
+    <link rel="stylesheet" href="styles.css" type="text/css">
+</head>
+<body>
+    <!-- HEADER COMUM -->
+    <header class="cabecalho">
+        <div class="icone_container">
+            <img src="media/icone_calove.png" id="icone_calove" alt="Logo">
+        </div>
+        <div class="texto_cabecalho_container">
+            <h1>VENDINHA DO CALOVE</h1>
+            <h2>Gestão de Vendas</h2>
+        </div>
+        <div class="spacer"></div>
+    </header>
 
-
-<header class="cabecalho">
-    <div class="icone_container">
-        <img src="media/icone_calove.png" id="icone_calove">
-    </div>
-    <div class="texto_cabecalho_container">
-        <h1>VENDINHA DO CALOVE</h1>
-        <h2> Gestão de vendas</h2>
-    </div>
-
-    <div class="spacer"></div>
-</header>
-
-<div id="container-geral">
-    <input type="radio" id="toggle-cadastro" name="menu-vendas" style="display: none;">
-    <input type="radio" id="toggle-novo-produto" name="menu-vendas" style="display: none;">
-    <input type="radio" id="toggle-editar" name="menu-vendas" style="display: none;">
-    <input type="radio" id="toggle-perda" name="menu-vendas" style="display: none;">
-
-    <input type="radio" id="fechar-tudo" name="menu-vendas" style="display: none;">
-
+    <!-- MENU DE NAVEGAÇÃO -->
     <nav id="menu-horizontal">
         <div class="navegador">
             <table>
@@ -30,301 +29,160 @@
                         <th><label for="toggle-novo-produto">Cadastrar Novo Produto</label></th>
                         <th><label for="toggle-editar">Editar Produto</label></th>
                         <th><label for="toggle-perda">Registrar Perda</label></th>
+                        <th><a href="loja.html">Acessar Loja</a></th>
                     </tr>
                 </thead>
             </table>
         </div>
     </nav>
 
-    <section class="container-input area-estoque">
-        <h3>Inserir Produto ao Estoque</h3>
-        <div class="grid-inputs">
-            <div class="campo"><label>Data Compra</label><input type="text" placeholder="00/00/0000"></div>
-            <div class="campo"><label>Cód.</label><input type="text" placeholder="P000"></div>
-            <div class="campo"><label>Item</label><input type="text" placeholder="Nome do item"></div>
-            <div class="campo"><label>Nº Lotes</label><input type="number"></div>
-            <div class="campo"><label>Qtd - CX</label><input type="number"></div>
-            <div class="campo"><label>Total Itens</label><input type="number"></div>
-            <div class="campo"><label>Valor Lote</label><input type="text"></div>
-            <div class="campo"><label>Valor Total</label><input type="text"></div>
-            <div class="campo"><label>Valor/Un.</label><input type="text"></div>
-            <div class="campo"><label>Preço Venda</label><input type="text"></div>
-            <div class="campo"><label>Lucro Total</label><input type="text"></div>
-            <div class="campo"><label>Previsão</label><input type="text"></div>
-        </div>
-        <div class="acoes">
-            <button class="btn-salvar">Salvar no Estoque</button>
-            <label for="fechar-tudo" class="btn-limpar">Cancelar</label>
-        </div>
-    </section>
+    <!-- FORMULÁRIOS DE GERENCIAMENTO -->
+    <div id="container-geral">
+        <input type="radio" id="toggle-cadastro" name="menu-vendas" style="display: none;">
+        <input type="radio" id="toggle-novo-produto" name="menu-vendas" style="display: none;">
+        <input type="radio" id="toggle-editar" name="menu-vendas" style="display: none;">
+        <input type="radio" id="toggle-perda" name="menu-vendas" style="display: none;">
+        <input type="radio" id="fechar-tudo" name="menu-vendas" style="display: none;">
 
-    <section class="container-input area-novo-produto">
-        <h3>Cadastrar Novo Produto</h3>
-        <div class="grid-inputs">
-            <div class="campo"><label>Descrição do Produto</label><input type="text" placeholder="Ex: Chocolate Trento">
+        <!-- Inserir ao Estoque -->
+        <section class="container-input area-estoque">
+            <h3>Inserir Produto ao Estoque</h3>
+            <div class="grid-inputs">
+                <div class="campo"><label>Data Compra</label><input type="text" placeholder="00/00/0000"></div>
+                <div class="campo"><label>Cód.</label><input type="text" placeholder="P000"></div>
+                <div class="campo"><label>Item</label><input type="text" placeholder="Nome do item"></div>
+                <div class="campo"><label>Nº Lotes</label><input type="number"></div>
+                <div class="campo"><label>Qtd - CX</label><input type="number"></div>
+                <div class="campo"><label>Total Itens</label><input type="number"></div>
+                <div class="campo"><label>Valor Lote</label><input type="text"></div>
+                <div class="campo"><label>Valor Total</label><input type="text"></div>
+                <div class="campo"><label>Valor/Un.</label><input type="text"></div>
+                <div class="campo"><label>Preço Venda</label><input type="text"></div>
+                <div class="campo"><label>Lucro Total</label><input type="text"></div>
+                <div class="campo"><label>Previsão</label><input type="text"></div>
             </div>
-            <div class="campo"><label>Qtd por Lote</label><input type="number" placeholder="0"></div>
-            <div class="campo"><label>Custo do Lote</label><input type="text" placeholder="R$ 0,00"></div>
-            <div class="campo"><label>Preço Venda Unidade</label><input type="text" placeholder="R$ 0,00"></div>
-        </div>
-        <div class="acoes">
-            <button class="btn-salvar">Finalizar Cadastro</button>
-            <label for="fechar-tudo" class="btn-limpar">Cancelar</label>
-        </div>
-    </section>
-
-    <section class="container-input area-editar">
-        <h3>Editar Produto Existente</h3>
-        <div
-            style="background: #f1f5ff; padding: 15px; border-radius: 8px; margin-bottom: 20px; border: 1px dashed #5384ed;">
-            <label style="font-weight: bold; font-size: 13px; color: #5384ed;">Pesquisar Produto (Cód. ou Nome):</label>
-            <div style="display: flex; gap: 10px; margin-top: 5px;">
-                <input type="text" placeholder="Ex: P021 ou Pé de moça"
-                    style="flex: 1; padding: 8px; border: 1px solid #ccc; border-radius: 4px;">
-                <button
-                    style="background: #5384ed; color: white; border: none; padding: 0 15px; border-radius: 4px; cursor: pointer;">Buscar</button>
+            <div class="acoes">
+                <button class="btn-salvar">Salvar no Estoque</button>
+                <label for="fechar-tudo" class="btn-limpar">Cancelar</label>
             </div>
-        </div>
-        <div class="grid-inputs">
-            <div class="campo"><label>Alterar Qtd por Lote</label><input type="number"></div>
-            <div class="campo"><label>Alterar Custo do Lote</label><input type="text"></div>
-            <div class="campo"><label>Alterar Preço Venda Un.</label><input type="text"></div>
-        </div>
-        <div class="acoes">
-            <button class="btn-salvar">Salvar Alterações</button>
-            <label for="fechar-tudo" class="btn-limpar">Cancelar</label>
-        </div>
-    </section>
+        </section>
 
-    <section class="container-input area-perda">
-        <h3>Registrar Perda de Estoque</h3>
-        <div
-            style="background: #fff5f5; padding: 15px; border-radius: 8px; margin-bottom: 20px; border: 1px dashed #f246ed;">
-            <label style="font-weight: bold; font-size: 13px; color: #f246ed;">Identificar Item Perdido:</label>
-            <div style="display: flex; gap: 10px; margin-top: 5px;">
-                <input type="text" placeholder="Cód. ou Nome do Produto"
-                    style="flex: 1; padding: 8px; border: 1px solid #ccc; border-radius: 4px;">
+        <!-- Cadastrar Novo Produto -->
+        <section class="container-input area-novo-produto">
+            <h3>Cadastrar Novo Produto</h3>
+            <div class="grid-inputs">
+                <div class="campo"><label>Descrição do Produto</label><input type="text" placeholder="Ex: Chocolate Trento"></div>
+                <div class="campo"><label>Qtd por Lote</label><input type="number" placeholder="0"></div>
+                <div class="campo"><label>Custo do Lote</label><input type="text" placeholder="R$ 0,00"></div>
+                <div class="campo"><label>Preço Venda Unidade</label><input type="text" placeholder="R$ 0,00"></div>
             </div>
-        </div>
-        <div class="grid-inputs">
-            <div class="campo"><label>Quantidade</label><input type="number"></div>
-            <div class="campo"><label>Data da Ocorrência</label><input type="text" placeholder="00/00/0000"></div>
-            <div class="campo">
-                <label>Razão da Perda</label>
-                <select
-                    style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; background: white;">
-                    <option value="">Selecione...</option>
-                    <option value="extravio">Extravio</option>
-                    <option value="doacao">Doação</option>
-                    <option value="validade">Validade</option>
-                </select>
+            <div class="acoes">
+                <button class="btn-salvar">Finalizar Cadastro</button>
+                <label for="fechar-tudo" class="btn-limpar">Cancelar</label>
             </div>
-        </div>
-        <div class="campo" style="margin-top: 15px;">
-            <label>Observação</label>
-            <input type="text" placeholder="Detalhes da ocorrência...">
-        </div>
-        <div class="acoes">
-            <button class="btn-salvar" style="background-color: #f246ed;">Registrar Baixa</button>
-            <label for="fechar-tudo" class="btn-limpar">Cancelar</label>
-        </div>
-    </section>
-</div>
+        </section>
 
-<hr>
+        <!-- Editar Produto -->
+        <section class="container-input area-editar">
+            <h3>Editar Produto Existente</h3>
+            <div style="background: #f1f5ff; padding: 15px; border-radius: 8px; margin-bottom: 20px; border: 1px dashed #5384ed;">
+                <label style="font-weight: bold; font-size: 13px; color: #5384ed;">Pesquisar Produto (Cód. ou Nome):</label>
+                <div style="display: flex; gap: 10px; margin-top: 5px;">
+                    <input type="text" placeholder="Ex: P021 ou Pé de moça" style="flex: 1; padding: 8px; border: 1px solid #ccc; border-radius: 4px;">
+                    <button style="background: #5384ed; color: white; border: none; padding: 0 15px; border-radius: 4px; cursor: pointer;">Buscar</button>
+                </div>
+            </div>
+            <div class="grid-inputs">
+                <div class="campo"><label>Alterar Qtd por Lote</label><input type="number"></div>
+                <div class="campo"><label>Alterar Custo do Lote</label><input type="text"></div>
+                <div class="campo"><label>Alterar Preço Venda Un.</label><input type="text"></div>
+            </div>
+            <div class="acoes">
+                <button class="btn-salvar">Salvar Alterações</button>
+                <label for="fechar-tudo" class="btn-limpar">Cancelar</label>
+            </div>
+        </section>
 
-
-<main id="conteudo-principal">
-    <div class="espacador-tabela"></div>
-    <h2 class="titulos_tabelas">
-        Última movimentações
-    </h2>
-    <div class="tabela-container">
-        <table>
-            <thead>
-                <tr>
-                    <th>DATA COMPRA</th>
-                    <th>CÓD.</th>
-                    <th>ITEM</th>
-                    <th>Nº LOTES</th>
-                    <th>QTD - CX</th>
-                    <th>TOTAL ITENS</th>
-                    <th>VALOR LOTE</th>
-                    <th>VALOR TOTAL</th>
-                    <th>VALOR/UN.</th>
-                    <th>PREÇO VENDA</th>
-                    <th>LUCRO TOTAL</th>
-                    <th>PREVISÃO</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>01/04/2026</td>
-                    <td>P021</td>
-                    <td>Pé de moça</td>
-                    <td>1</td>
-                    <td>20</td>
-                    <td>20</td>
-                    <td>R$ 15,99</td>
-                    <td>R$ 15,99</td>
-                    <td>R$ 0,80</td>
-                    <td>R$ 2,50</td>
-                    <td class="lucro">R$ 34,01</td>
-                    <td>19/04/2026</td>
-                </tr>
-                <tr>
-                    <td>01/04/2026</td>
-                    <td>P018</td>
-                    <td>Mendorato</td>
-                    <td>2</td>
-                    <td>60</td>
-                    <td>120</td>
-                    <td>R$ 29,99</td>
-                    <td>R$ 59,98</td>
-                    <td>R$ 0,50</td>
-                    <td>R$ 1,50</td>
-                    <td class="lucro">R$ 120,02</td>
-                    <td>08/04/2026</td>
-                </tr>
-                <tr>
-                    <td>18/03/2026</td>
-                    <td>P044</td>
-                    <td>Freeg Melancia</td>
-                    <td>3</td>
-                    <td>12</td>
-                    <td>36</td>
-                    <td>R$ 8,50</td>
-                    <td>R$ 25,50</td>
-                    <td>R$ 0,71</td>
-                    <td>R$ 2,50</td>
-                    <td class="lucro">R$ 64,50</td>
-                    <td>07/04/2026</td>
-                </tr>
-                <tr>
-                    <td>18/03/2026</td>
-                    <td>P009</td>
-                    <td>Trento CHOC BRANC</td>
-                    <td>2</td>
-                    <td>16</td>
-                    <td>32</td>
-                    <td>R$ 32,99</td>
-                    <td>R$ 65,98</td>
-                    <td>R$ 2,06</td>
-                    <td>R$ 4,00</td>
-                    <td class="lucro">R$ 62,02</td>
-                    <td>08/04/2026</td>
-                </tr>
-            </tbody>
-        </table>
+        <!-- Registrar Perda -->
+        <section class="container-input area-perda">
+            <h3>Registrar Perda de Estoque</h3>
+            <div style="background: #fff5f5; padding: 15px; border-radius: 8px; margin-bottom: 20px; border: 1px dashed #f246ed;">
+                <label style="font-weight: bold; font-size: 13px; color: #f246ed;">Identificar Item Perdido:</label>
+                <div style="display: flex; gap: 10px; margin-top: 5px;">
+                    <input type="text" placeholder="Cód. ou Nome do Produto" style="flex: 1; padding: 8px; border: 1px solid #ccc; border-radius: 4px;">
+                </div>
+            </div>
+            <div class="grid-inputs">
+                <div class="campo"><label>Quantidade</label><input type="number"></div>
+                <div class="campo"><label>Data da Ocorrência</label><input type="text" placeholder="00/00/0000"></div>
+                <div class="campo">
+                    <label>Razão da Perda</label>
+                    <select style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; background: white;">
+                        <option value="">Selecione...</option>
+                        <option value="extravio">Extravio</option>
+                        <option value="doacao">Doação</option>
+                        <option value="validade">Validade</option>
+                    </select>
+                </div>
+            </div>
+            <div class="campo" style="margin-top: 15px;">
+                <label>Observação</label>
+                <input type="text" placeholder="Detalhes da ocorrência...">
+            </div>
+            <div class="acoes">
+                <button class="btn-salvar" style="background-color: #f246ed;">Registrar Baixa</button>
+                <label for="fechar-tudo" class="btn-limpar">Cancelar</label>
+            </div>
+        </section>
     </div>
 
-
-    <hr>
-
-    <div class="espacador-tabela"></div>
-
+    <!-- TABELAS DE MOVIMENTAÇÕES E ESTOQUE -->
     <main id="conteudo-principal">
+        <div class="espacador-tabela"></div>
+        
+        <h2 class="titulos_tabelas">Últimas Movimentações</h2>
+        <div class="tabela-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>DATA COMPRA</th><th>CÓD.</th><th>ITEM</th><th>Nº LOTES</th><th>QTD - CX</th>
+                        <th>TOTAL ITENS</th><th>VALOR LOTE</th><th>VALOR TOTAL</th><th>VALOR/UN.</th>
+                        <th>PREÇO VENDA</th><th>LUCRO TOTAL</th><th>PREVISÃO</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>01/04/2026</td><td>P021</td><td>Pé de moça</td><td>1</td><td>20</td><td>20</td><td>R$ 15,99</td><td>R$ 15,99</td><td>R$ 0,80</td><td>R$ 2,50</td><td class="lucro">R$ 34,01</td><td>19/04/2026</td></tr>
+                    <tr><td>01/04/2026</td><td>P018</td><td>Mendorato</td><td>2</td><td>60</td><td>120</td><td>R$ 29,99</td><td>R$ 59,98</td><td>R$ 0,50</td><td>R$ 1,50</td><td class="lucro">R$ 120,02</td><td>08/04/2026</td></tr>
+                    <tr><td>18/03/2026</td><td>P044</td><td>Freeg Melancia</td><td>3</td><td>12</td><td>36</td><td>R$ 8,50</td><td>R$ 25,50</td><td>R$ 0,71</td><td>R$ 2,50</td><td class="lucro">R$ 64,50</td><td>07/04/2026</td></tr>
+                    <tr><td>18/03/2026</td><td>P009</td><td>Trento CHOC BRANC</td><td>2</td><td>16</td><td>32</td><td>R$ 32,99</td><td>R$ 65,98</td><td>R$ 2,06</td><td>R$ 4,00</td><td class="lucro">R$ 62,02</td><td>08/04/2026</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <hr>
         <div class="espacador-tabela"></div>
 
         <div class="container-flex-estoque">
-
             <div class="secao-estoque">
                 <h2 class="titulos_tabelas" style="margin-left: 0;">Estoque</h2>
                 <div class="tabela-container-reduzida">
                     <table>
-                        <thead>
-                            <tr>
-                                <th>Código</th>
-                                <th>Produto</th>
-                                <th>Un.</th>
-                                <th>Previsão</th>
-                            </tr>
-                        </thead>
+                        <thead><tr><th>Código</th><th>Produto</th><th>Un.</th><th>Previsão</th></tr></thead>
                         <tbody>
-                            <tr>
-                                <td>P010</td>
-                                <td>Barra NUTRY</td>
-                                <td>51</td>
-                                <td>2/4/2026</td>
-                            </tr>
-                            <tr>
-                                <td>P008</td>
-                                <td>Trento TORT LIM</td>
-                                <td>20</td>
-                                <td>5/4/2026</td>
-                            </tr>
-                            <tr>
-                                <td>P046</td>
-                                <td>trento dark</td>
-                                <td>33</td>
-                                <td>5/4/2026</td>
-                            </tr>
-                            <tr>
-                                <td>P044</td>
-                                <td>Freeg Melancia</td>
-                                <td>39</td>
-                                <td>7/4/2026</td>
-                            </tr>
-                            <tr>
-                                <td>P018</td>
-                                <td>Mendorato</td>
-                                <td>135</td>
-                                <td>8/4/2026</td>
-                            </tr>
-                            <tr>
-                                <td>P009</td>
-                                <td>Trento CHOC BRANC</td>
-                                <td>40</td>
-                                <td>8/4/2026</td>
-                            </tr>
-                            <tr>
-                                <td>P006</td>
-                                <td>Freeg EXTR FRT</td>
-                                <td>21</td>
-                                <td>10/4/2026 </td>
-                            </tr>
-                            <tr>
-                                <td>P007</td>
-                                <td>Freeg UVA AZD</td>
-                                <td>19</td>
-                                <td>12/4/2026 </td>
-                            </tr>
-                            <tr>
-                                <td>P005</td>
-                                <td>Freeg MOR AZD</td>
-                                <td>17</td>
-                                <td>16/4/2026 </td>
-                            </tr>
-                            <tr>
-                                <td>P019</td>
-                                <td>Amindus</td>
-                                <td>87</td>
-                                <td>16/4/2026 </td>
-                            </tr>
-                            <tr>
-                                <td>P020</td>
-                                <td>Paçoca</td>
-                                <td>111</td>
-                                <td>18/4/2026 </td>
-                            </tr>
-                            <tr>
-                                <td>P021</td>
-                                <td>Pé de moca</td>
-                                <td>23</td>
-                                <td>19/4/2026 </td>
-                            </tr>
-                            <tr>
-                                <td>P025</td>
-                                <td>Coca cola Lata Zero</td>
-                                <td>48</td>
-                                <td>21/4/2026 </td>
-                            </tr>
-                            <tr>
-                                <td>P028</td>
-                                <td>Mate Natu</td>
-                                <td>25</td>
-                                <td>30/4/2026</td>
-                            </tr>
+                            <tr><td>P010</td><td>Barra NUTRY</td><td>51</td><td>2/4/2026</td></tr>
+                            <tr><td>P008</td><td>Trento TORT LIM</td><td>20</td><td>5/4/2026</td></tr>
+                            <tr><td>P046</td><td>trento dark</td><td>33</td><td>5/4/2026</td></tr>
+                            <tr><td>P044</td><td>Freeg Melancia</td><td>39</td><td>7/4/2026</td></tr>
+                            <tr><td>P018</td><td>Mendorato</td><td>135</td><td>8/4/2026</td></tr>
+                            <tr><td>P009</td><td>Trento CHOC BRANC</td><td>40</td><td>8/4/2026</td></tr>
+                            <tr><td>P006</td><td>Freeg EXTR FRT</td><td>21</td><td>10/4/2026</td></tr>
+                            <tr><td>P007</td><td>Freeg UVA AZD</td><td>19</td><td>12/4/2026</td></tr>
+                            <tr><td>P005</td><td>Freeg MOR AZD</td><td>17</td><td>16/4/2026</td></tr>
+                            <tr><td>P019</td><td>Amindus</td><td>87</td><td>16/4/2026</td></tr>
+                            <tr><td>P020</td><td>Paçoca</td><td>111</td><td>18/4/2026</td></tr>
+                            <tr><td>P021</td><td>Pé de moca</td><td>23</td><td>19/4/2026</td></tr>
+                            <tr><td>P025</td><td>Coca cola Lata Zero</td><td>48</td><td>21/4/2026</td></tr>
+                            <tr><td>P028</td><td>Mate Natu</td><td>25</td><td>30/4/2026</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -342,6 +200,13 @@
                     </ul>
                 </div>
             </div>
-
         </div>
     </main>
+
+    <!-- FOOTER COMUM -->
+    <footer class="rodape">
+        <hr>
+        <p>&copy; 2026 Vendinha do Calove - Sistema de Gestão</p>
+    </footer>
+</body>
+</html>
