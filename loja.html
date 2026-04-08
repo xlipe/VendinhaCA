@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Loja - Vendinha do Calove</title>
     <link rel="stylesheet" href="styles.css" type="text/css">
+    <script src="script.js"></script>
     <style>
         .produtos-grid {
             display: grid;
@@ -150,20 +151,5 @@
         <p>&copy; 2026 Vendinha do Calove - Loja Virtual</p>
     </footer>
 
-    <script>
-        function comprar(produto, chavePix) {
-            const texto = `PIX para ${produto}\nChave: ${chavePix}`;
-            navigator.clipboard.writeText(texto).then(() => {
-                document.getElementById('popup').style.display = 'block';
-                document.getElementById('overlay').style.display = 'block';
-            }).catch(() => {
-                alert('Erro ao copiar PIX. Copie manualmente: ' + texto);
-            });
-        }
-        function fecharPopup() {
-            document.getElementById('popup').style.display = 'none';
-            document.getElementById('overlay').style.display = 'none';
-        }
-    </script>
 </body>
 </html>
